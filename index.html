@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>d3js dynamic HTML page</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <style>
+            body {background-color: white;}
+            .special {color: rgb(29, 106, 206); font-weight: bold; text-align: center;
+                      text-decoration-line: underline; font-size: 21pt;}
+            .title {color:rgb(0, 0, 0); text-align: center; font-size: 18pt;}
+            .text{color: black; text-align:justify ; font-size: 16pt;}
+            .text2{color:black; font-size: 12pt;}
+            .operator {font-weight: bold;}
+            .email {color:rgb(39, 37, 37); font-size: 14pt; text-align: center;}
+            p {
+                color: black; font-size: medium;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <br>
+        <div class="special">SECOND ASSIGNMENT: DYNAMIC PAGE</div>
+        <br>
+        <div class="title">MARTA ILUNDAIN MARTÍNEZ</div>
+        <br>
+        <div class="email">100439245@alumnos.uc3m.es</div>
+        <br>
+        <div class="text">In this second assignment, we have created a page where we can write a certain text and insert it on a paragraph of the page.
+            We can also change the color of this text to red or blue by selecting two buttons.</div>
+        <br>
+        <div class="text2">Write the wanted text in the following cell:</div>
+        <br>
+        <input id="myText">
+        <button onclick="insertext()">Insert text</button>
+        <br>
+        <br>
+        <div class="text2">Select the color of the text:</div>
+        <br>
+
+        <div>
+            <button onclick="colorred()">red</button>
+            <button onclick="colorblue()">blue</button>
+        </div>
+
+        <p></p>
+
+        <script>
+            function insertext(value) {
+                a = document.getElementById("myText").value
+                d3.select("body").insert("p").text(a);
+            }
+            function colorred() {
+                d3.selectAll("p").style("color", "red");
+            }
+
+            function colorblue() {
+                d3.selectAll("p").style("color", "blue");
+            }
+        </script>
+
+    
+    </body>
+
+</html>
+
+
